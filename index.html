@@ -1,357 +1,250 @@
 <!DOCTYPE html>
-<html lang="hi" class="scroll-smooth">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatty Liver Lifestyle Guide - ₹99 Only</title>
-    
-    <!-- Google Fonts for Indian Context -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (via CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatty Liver Lifestyle Guide – ₹99</title>
 
-    <!-- Custom Config for Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#fffbeb',        /* Light Ayurvedic Background */
-                        deepGreen: '#14532d',    /* Dark Text/Headings */
-                        forest: '#166534',       /* Primary Brand Color */
-                        leaf: '#dcfce7',         /* Light Green Accents */
-                        sage: '#f0fdf4',         /* Section Backgrounds */
-                        urgent: '#ea580c',       /* Deep Orange for Urgency */
-                        accent: '#f59e0b',       /* Bright Yellow/Orange */
-                        gold: '#b45309'          /* Dark Gold Text */
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans', 'sans-serif'],
-                        serif: ['Noto Serif', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-    <style>
-        /* Custom Styles & Animations */
-        body {
-            background-color: #fffbeb; /* Cream Background */
-            color: #14532d; /* Deep Green Text */
-        }
+  <style>
+    :root{
+      --green:#1b5e20;
+      --light-green:#e8f5e9;
+      --orange:#ff9800;
+      --white:#ffffff;
+    }
 
-        .hindi-text {
-            line-height: 1.5;
-        }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-        /* Image Styling */
-        .hero-image {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-radius: 12px;
-            border: 4px solid #fff;
-            transform: rotate(-2deg);
-            transition: transform 0.3s ease;
-        }
-        .hero-image:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
+    body{
+      background:linear-gradient(180deg,#0f3d1c,#1b5e20);
+      color:#fff;
+      line-height:1.6;
+    }
 
-        .feature-image {
-            border-radius: 16px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+    section{
+      padding:60px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
 
-        /* Pulse Animation for Buttons */
-        @keyframes glowing {
-            0% { box-shadow: 0 0 5px #f59e0b; }
-            50% { box-shadow: 0 0 20px #f59e0b, 0 0 10px #f59e0b; }
-            100% { box-shadow: 0 0 5px #f59e0b; }
-        }
-        .btn-glow {
-            animation: glowing 2s infinite;
-        }
-    </style>
+    .center{text-align:center;}
+
+    /* TYPOGRAPHY */
+    .hi{
+      font-size:36px;
+      font-weight:800;
+    }
+    .en{
+      font-size:18px;
+      font-weight:700;
+      opacity:.9;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .price{
+      background:var(--orange);
+      color:#000;
+      display:inline-block;
+      padding:8px 20px;
+      border-radius:30px;
+      font-weight:800;
+      margin:20px 0;
+    }
+
+    img{
+      max-width:100%;
+      border-radius:16px;
+    }
+
+    /* BUTTON */
+    .btn{
+      background:var(--orange);
+      color:#000;
+      padding:16px 36px;
+      border-radius:50px;
+      font-size:18px;
+      font-weight:800;
+      display:inline-block;
+      text-decoration:none;
+      animation:pulse 1.8s infinite;
+      box-shadow:0 0 20px rgba(255,152,0,.6);
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.05);}
+      100%{transform:scale(1);}
+    }
+
+    /* SECTIONS */
+    .card{
+      background:rgba(255,255,255,0.08);
+      border-radius:20px;
+      padding:30px;
+      margin-top:30px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .food-img{
+      height:180px;
+      object-fit:cover;
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg,#ff9800,#ffc107);
+      color:#000;
+      border-radius:25px;
+      padding:40px 20px;
+      margin-top:40px;
+    }
+
+    .disclaimer{
+      font-size:14px;
+      opacity:.85;
+    }
+
+    /* ANIMATION ON SCROLL */
+    .fade{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s;
+    }
+    .fade.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero{grid-template-columns:1fr;}
+      .hi{font-size:28px;}
+      .en{font-size:15px;}
+    }
+  </style>
 </head>
-<body class="antialiased overflow-x-hidden">
+<body>
 
-    <!-- Navbar -->
-    <nav class="w-full bg-cream/90 backdrop-blur-md fixed top-0 z-50 border-b border-green-100 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i data-lucide="leaf" class="text-forest h-6 w-6"></i>
-                <div>
-                    <span class="block text-lg font-bold text-deepGreen leading-none">Holistic Health</span>
-                    <span class="text-xs text-forest opacity-80">Lifestyle Guide</span>
-                </div>
-            </div>
-            <a href="#pricing" class="bg-forest hover:bg-deepGreen text-white font-bold py-2 px-5 rounded-full text-sm transition shadow-lg">
-                Buy PDF
-            </a>
-        </div>
-    </nav>
+<!-- HERO -->
+<section class="hero fade">
+  <div>
+    <h1 class="hi">फैटी लिवर को समझने और लाइफस्टाइल सुधारने की आसान गाइड</h1>
+    <p class="en">Simple lifestyle & food awareness guide for fatty liver management</p>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-br from-cream via-green-50 to-orange-50">
-        <!-- Background Elements -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div class="absolute -bottom-8 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    <div class="price">Only ₹99</div><br>
 
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            
-            <!-- Content -->
-            <div class="space-y-6 z-10 text-center md:text-left order-2 md:order-1">
-                <span class="inline-block bg-green-100 border border-green-200 text-forest px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-2">
-                    DIGITAL DOWNLOAD • HINDI & ENGLISH
-                </span>
-                
-                <h1 class="text-3xl md:text-5xl font-bold text-deepGreen leading-tight">
-                    <span class="hindi-text block mb-2 text-urgent">फैटी लिवर से जुड़ी समस्याओं को</span> 
-                    घर बैठे समझें और सुधारें
-                </h1>
-                
-                <p class="text-gray-600 text-lg md:text-xl font-light">
-                    Understand and manage Fatty Liver lifestyle problems naturally.
-                </p>
+    <a href="#" class="btn">Buy Now – ₹99</a>
+  </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-                    <a href="#pricing" class="btn-glow bg-gradient-to-r from-urgent to-orange-600 hover:from-orange-700 hover:to-orange-600 text-white text-xl font-bold py-4 px-8 rounded-xl shadow-lg transform transition hover:-translate-y-1 flex flex-col items-center">
-                        <span class="hindi-text">अभी गाइड डाउनलोड करें</span>
-                        <span class="text-sm font-normal opacity-90">Download Guide - Only ₹99</span>
-                    </a>
-                </div>
+  <div>
+    <img src="book.png" alt="Fatty Liver Guide Book">
+  </div>
+</section>
 
-                <div class="flex items-center justify-center md:justify-start gap-2 text-sm text-gray-500 pt-2">
-                    <i data-lucide="check-circle" class="w-4 h-4 text-forest"></i>
-                    <span>Instant PDF Access</span>
-                    <span class="mx-2">•</span>
-                    <i data-lucide="shield-check" class="w-4 h-4 text-forest"></i>
-                    <span>Secure Payment</span>
-                </div>
-            </div>
+<!-- AWARENESS -->
+<section class="center fade">
+  <h2 class="hi">फैटी लिवर क्या है?</h2>
+  <p class="en">What is Fatty Liver?</p>
 
-            <!-- Hero Image (Uploaded Image 1) -->
-            <div class="mt-8 md:mt-0 flex justify-center order-1 md:order-2">
-                <!-- Using image_2b74c6.jpg as the Main Product/Hero Image -->
-                <img src="image_2b74c6.jpg" alt="Fatty Liver Guide Book Cover" class="hero-image max-w-[280px] md:max-w-[350px] w-full object-cover shadow-2xl" onerror="this.src='https://placehold.co/300x400/14532d/ecfdf5?text=Guide+Cover'">
-            </div>
+  <div class="card">
+    <p class="hi" style="font-size:22px;">
+      फैटी लिवर एक लाइफस्टाइल से जुड़ी समस्या है जो गलत खान-पान और दिनचर्या से जुड़ी होती है।
+    </p>
+    <p class="en">
+      Fatty liver is often related to lifestyle habits and daily food choices.
+    </p>
+  </div>
+</section>
 
-        </div>
-    </section>
+<!-- BEFORE AFTER -->
+<section class="center fade">
+  <h2 class="hi">लाइफस्टाइल समझ – Before & After</h2>
+  <p class="en">Lifestyle understanding – visual illustration</p>
 
-    <!-- PROBLEM AWARENESS (Educational) -->
-    <section class="py-16 bg-white border-y border-green-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-deepGreen mb-2 hindi-text">क्यों बढ़ रही है ये समस्या?</h2>
-            <p class="text-gray-500 mb-8">Why is this problem increasing?</p>
+  <div class="grid">
+    <img src="before-after-green.png" alt="Before After Fatty Liver">
+    <img src="before-after-orange.png" alt="Before After Fatty Liver">
+  </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-sage p-6 rounded-xl border border-green-100 hover:border-accent transition hover:shadow-lg">
-                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-urgent shadow-sm">
-                        <i data-lucide="utensils-crossed" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-deepGreen mb-2 hindi-text">गलत खान-पान</h3>
-                    <p class="text-gray-600 text-sm">Processed food & excess oil.</p>
-                </div>
+  <p class="disclaimer">*ये images केवल समझाने के उद्देश्य से हैं (Illustration purpose only)</p>
+</section>
 
-                <!-- Card 2 -->
-                <div class="bg-sage p-6 rounded-xl border border-green-100 hover:border-accent transition hover:shadow-lg">
-                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-urgent shadow-sm">
-                        <i data-lucide="armchair" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-deepGreen mb-2 hindi-text">आराम तलब लाइफस्टाइल</h3>
-                    <p class="text-gray-600 text-sm">Lack of movement & sitting all day.</p>
-                </div>
+<!-- HOW GUIDE HELPS -->
+<section class="fade">
+  <h2 class="hi center">यह गाइड कैसे मदद करती है</h2>
+  <p class="en center">How this guide helps you</p>
 
-                <!-- Card 3 -->
-                <div class="bg-sage p-6 rounded-xl border border-green-100 hover:border-accent transition hover:shadow-lg">
-                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-urgent shadow-sm">
-                        <i data-lucide="clock" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-deepGreen mb-2 hindi-text">बेवक्त भोजन</h3>
-                    <p class="text-gray-600 text-sm">Irregular eating habits.</p>
-                </div>
-            </div>
-            
-            <p class="mt-8 text-sm text-gray-400 italic bg-gray-50 rounded-full py-1 px-4 inline-block">
-                *This information is for general awareness only.
-            </p>
-        </div>
-    </section>
+  <div class="grid">
+    <div class="card">✅ Daily lifestyle awareness</div>
+    <div class="card">✅ Indian food habit understanding</div>
+    <div class="card">✅ Simple routine guidance</div>
+    <div class="card">✅ Easy to follow steps</div>
+  </div>
+</section>
 
-    <!-- VISUAL REPRESENTATION (Before/After - Image Inspired) -->
-    <section class="py-16 bg-sage relative">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="text-center mb-10">
-                <span class="text-urgent uppercase tracking-widest text-xs font-bold">Educational Representation</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-deepGreen mt-2 hindi-text">लाइफस्टाइल का असर</h2>
-                <p class="text-gray-600">Visual understanding of lifestyle impact</p>
-            </div>
+<!-- FOOD IMAGES -->
+<section class="fade">
+  <div class="grid">
+    <img class="food-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="">
+    <img class="food-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="">
+    <img class="food-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="">
+  </div>
+</section>
 
-            <!-- Replaced CSS Art with Image 2 -->
-            <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border border-green-100">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="order-2 md:order-1">
-                        <h3 class="text-2xl font-bold text-deepGreen mb-4 hindi-text border-l-4 border-urgent pl-3">देखिए और समझिए</h3>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                            These illustrations help you visualize the difference between a healthy organ and one affected by poor lifestyle choices.
-                            <br><br>
-                            <span class="hindi-text font-medium text-forest">यह चित्र केवल समझने के लिए है कि कैसे हमारी आदतें हमारे शरीर पर असर डालती हैं।</span>
-                        </p>
-                        <ul class="space-y-3 mt-6">
-                            <li class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                                <i data-lucide="check-circle" class="text-green-600 w-5 h-5"></i>
-                                <span class="text-sm font-semibold text-deepGreen">Healthy Habits = Energy</span>
-                            </li>
-                            <li class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                                <i data-lucide="alert-circle" class="text-urgent w-5 h-5"></i>
-                                <span class="text-sm font-semibold text-deepGreen">Poor Habits = Sluggishness</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Using image_2b7505.jpg as the Before/After Visual -->
-                    <div class="order-1 md:order-2 flex justify-center">
-                        <img src="image_2b7505.jpg" alt="Liver Lifestyle Comparison" class="feature-image w-full max-w-sm object-cover" onerror="this.src='https://placehold.co/400x300/e2e8f0/475569?text=Before+Vs+After+Visual'">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- MID CTA -->
+<section class="center fade">
+  <div class="cta-box">
+    <h2 class="hi">पूरा डिजिटल गाइड सिर्फ ₹99 में</h2>
+    <p class="en">Complete digital lifestyle guide at just ₹99</p><br>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+</section>
 
-    <!-- WHAT YOU GET SECTION (With Image 3) -->
-    <section class="py-16 bg-white">
-        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            
-            <!-- Image Side (Using image_2b74ae.jpg) -->
-            <div class="relative">
-                <div class="absolute inset-0 bg-accent/20 rounded-2xl transform rotate-3"></div>
-                <img src="image_2b74ae.jpg" alt="Healthy Food and Habits" class="relative z-10 feature-image w-full object-cover h-80 md:h-96" onerror="this.src='https://placehold.co/400x500/fff7ed/9a3412?text=Natural+Food+Habits'">
-            </div>
+<!-- DISCLAIMER -->
+<section class="center fade">
+  <p class="disclaimer">
+    यह गाइड केवल educational और lifestyle awareness के लिए है।  
+    यह किसी भी medical treatment या doctor की सलाह का विकल्प नहीं है।
+  </p>
+</section>
 
-            <!-- Content Side -->
-            <div>
-                <h2 class="text-3xl font-bold text-deepGreen mb-2 hindi-text">इस गाइड में आपको क्या मिलेगा?</h2>
-                <p class="text-gray-500 mb-8">What will you get in this guide?</p>
+<!-- FINAL CTA -->
+<section class="center fade">
+  <h2 class="hi">आज ही सही लाइफस्टाइल की शुरुआत करें</h2>
+  <p class="en">Start improving your lifestyle today</p><br>
+  <a href="#" class="btn">Buy Now – ₹99</a>
+</section>
 
-                <div class="space-y-4">
-                    <!-- Item 1 -->
-                    <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-green-50 transition border border-transparent hover:border-green-100">
-                        <div class="bg-green-100 p-2 rounded text-forest shrink-0">
-                            <i data-lucide="book-open" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-deepGreen hindi-text">सरल हिंदी में जानकारी</h4>
-                            <p class="text-gray-500 text-sm">Easy to understand explanation in simple Hindi.</p>
-                        </div>
-                    </div>
+<script>
+  const fades=document.querySelectorAll('.fade');
+  window.addEventListener('scroll',()=>{
+    fades.forEach(el=>{
+      const top=el.getBoundingClientRect().top;
+      if(top<window.innerHeight-100){
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
 
-                    <!-- Item 2 -->
-                    <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-green-50 transition border border-transparent hover:border-green-100">
-                        <div class="bg-green-100 p-2 rounded text-forest shrink-0">
-                            <i data-lucide="apple" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-deepGreen hindi-text">क्या खाएं, क्या नहीं (Food List)</h4>
-                            <p class="text-gray-500 text-sm">Detailed list of foods to prefer and avoid based on Indian kitchens.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-green-50 transition border border-transparent hover:border-green-100">
-                        <div class="bg-green-100 p-2 rounded text-forest shrink-0">
-                            <i data-lucide="sun" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-deepGreen hindi-text">डेली रूटीन प्लान</h4>
-                            <p class="text-gray-500 text-sm">Morning to Night simple lifestyle changes checklist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MID PAGE CTA -->
-                <div class="mt-8">
-                    <a href="#pricing" class="inline-flex items-center gap-2 bg-urgent hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
-                        <span class="hindi-text">गाइड खरीदें</span> | ₹99 <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST & DISCLAIMER (Critical) -->
-    <section class="py-12 bg-gray-50 px-4 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto bg-white border border-gray-200 p-6 rounded-lg text-center md:text-left flex flex-col md:flex-row items-center gap-6 shadow-sm">
-            <i data-lucide="alert-triangle" class="w-12 h-12 text-accent shrink-0"></i>
-            <div>
-                <h4 class="text-deepGreen font-bold uppercase tracking-wider text-sm mb-2">Important Disclaimer / जरूरी सूचना</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    This guide is for <strong>educational and lifestyle awareness purposes only</strong>. It is not a medical treatment, cure, or a substitute for professional medical advice. If you have severe symptoms, please consult a doctor immediately.
-                </p>
-                <p class="text-gray-500 text-xs mt-2 hindi-text">
-                    यह गाइड केवल शिक्षा और जीवनशैली जागरूकता के लिए है। यह किसी भी चिकित्सा उपचार का विकल्प नहीं है।
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA / PRICING -->
-    <section id="pricing" class="py-20 bg-forest text-center relative overflow-hidden">
-        <!-- Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
-
-        <div class="max-w-3xl mx-auto px-4 relative z-10">
-            <i data-lucide="star" class="w-8 h-8 text-yellow-400 mx-auto mb-4 animate-spin-slow"></i>
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 hindi-text">आज ही शुरुआत करें</h2>
-            <p class="text-xl text-green-100 mb-8">Take the first step towards a disciplined lifestyle.</p>
-
-            <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md mx-auto relative transform transition hover:-translate-y-2 duration-300">
-                <!-- Offer Badge -->
-                <div class="absolute -top-4 -right-4 bg-urgent text-white font-bold text-xs px-3 py-1 rounded-full uppercase shadow-md animate-bounce">
-                    Limited Time
-                </div>
-
-                <div class="text-center mb-6">
-                    <p class="text-gray-400 text-sm line-through">Regular Price ₹499</p>
-                    <div class="text-6xl font-bold text-deepGreen font-sans mt-2">₹99</div>
-                    <p class="text-forest font-medium text-sm mt-1">One-time payment</p>
-                </div>
-
-                <ul class="text-left text-gray-600 text-sm space-y-3 mb-8 pl-4 border-t border-gray-100 pt-6">
-                    <li class="flex gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> PDF Guide (Hindi + English)</li>
-                    <li class="flex gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> Food Habits Checklist</li>
-                    <li class="flex gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> Instant Email Delivery</li>
-                </ul>
-
-                <button class="w-full btn-glow bg-urgent hover:bg-orange-700 text-white text-xl font-bold py-4 rounded-xl transition shadow-xl flex justify-center items-center gap-2">
-                    <i data-lucide="download" class="w-5 h-5"></i>
-                    <span class="hindi-text">अभी खरीदें</span> (Buy Now)
-                </button>
-                
-                <p class="text-xs text-gray-400 mt-4">100% Safe & Secure Payment via UPI/Cards</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-deepGreen py-8 text-center text-green-200 text-xs border-t border-green-900">
-        <p>&copy; 2024 Holistic Health Guide. All rights reserved.</p>
-        <div class="flex justify-center gap-4 mt-2">
-            <a href="#" class="hover:text-white">Privacy Policy</a>
-            <a href="#" class="hover:text-white">Terms & Conditions</a>
-            <a href="#" class="hover:text-white">Support</a>
-        </div>
-    </footer>
-
-    <!-- Initialize Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
