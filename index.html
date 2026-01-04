@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatty Liver Lifestyle Guide - Natural Home Remedies</title>
+    <meta name="description" content="Manage Fatty Liver naturally at home with lifestyle changes. Download the bilingual guide for just ₹99.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (Lightweight SVG icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary: #2E7D32;       /* Leaf Green */
+            --primary-dark: #1B5E20;
+            --secondary: #E8F5E9;     /* Very Light Mint for backgrounds */
+            --accent: #FF9800;        /* Warm Orange */
+            --accent-hover: #F57C00;
+            --text-dark: #1a1a1a;
+            --text-gray: #555555;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(46, 125, 50, 0.15);
+            --radius: 16px;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: #FAFAFA;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hindi Font Handling */
+        .hindi-text {
+            font-family: 'Poppins', 'Tiro Devanagari Hindi', sans-serif;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .eng-text {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            font-weight: 400;
+            display: block;
+        }
+
+        a { text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* --- UTILITIES --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .highlight-green { color: var(--primary); }
+        .highlight-orange { color: var(--accent); }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.6);
+        }
+
+        /* Pulse Animation for CTA */
+        .pulse-anim {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .price-tag {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* CSS 3D Book Mockup */
+        .book-container {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .book {
+            width: 250px;
+            height: 350px;
+            background: var(--primary);
+            border-radius: 5px 15px 15px 5px;
+            position: relative;
+            box-shadow: 10px 20px 30px rgba(0,0,0,0.2);
+            transform: rotateY(-15deg);
+            transition: transform 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border-left: 12px solid var(--primary-dark);
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        }
+
+        .book:hover {
+            transform: rotateY(0deg) scale(1.05);
+        }
+
+        .book-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .book-subtitle {
+            color: #A5D6A7;
+            font-size: 0.9rem;
+        }
+
+        /* --- PROBLEM SECTION --- */
+        .problem-section {
+            background: var(--white);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+        }
+
+        /* --- SOLUTION SECTION --- */
+        .solution-section {
+            background: var(--secondary);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .check-list li {
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .check-icon {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        /* --- WHAT YOU LEARN --- */
+        .learn-section {
+            background: var(--white);
+        }
+
+        /* --- DIFFERENCE (USP) --- */
+        .usp-section {
+            background: #f9f9f9;
+        }
+
+        .usp-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* --- MID CTA --- */
+        .mid-cta {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .mid-cta h2 { color: white; margin-bottom: 20px; }
+        .mid-cta p { color: #E8F5E9; margin-bottom: 30px; }
+
+        /* --- TRUST & DISCLAIMER --- */
+        .disclaimer-box {
+            background: #F5F5F5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .disclaimer-title {
+            font-weight: 700;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        .footer-links a { color: #aaa; margin: 0 10px; }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .hero-grid, .solution-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+            .book-container {
+                order: 1;
+                margin-bottom: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .check-list li {
+                text-align: left;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Animation Classes for JS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-flex">
+            <div class="logo">
+                <i data-lucide="leaf"></i>
+                <span>HealthyLiver<span style="color:var(--accent)">Guide</span></span>
+            </div>
+            <a href="#buy-section" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.9rem;">
+                Buy Now ₹99
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content fade-in">
+                <span class="price-tag">🚀 Limited Offer: ₹99 Only</span>
+                <h1>
+                    <span class="hindi-text highlight-green">फैटी लिवर को घर पर मैनेज करें</span>
+                    <span class="hindi-text">सिंपल और नेचुरल आदतों के साथ</span>
+                    <span class="eng-text">Manage Fatty Liver at Home with Simple & Natural Lifestyle Habits</span>
+                </h1>
+                <p style="margin-bottom: 30px; color: var(--text-gray);">
+                    <span class="hindi-text" style="font-weight: 500;">दवाइयों के भरोसे न रहें, अपनी जीवनशैली बदलें।</span>
+                    <span class="eng-text">Don't rely solely on meds, transform your lifestyle.</span>
+                </p>
+                
+                <a href="#buy-section" class="btn btn-primary pulse-anim">
+                    <span>Buy Now – Sirf ₹99</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">
+                    <i data-lucide="shield-check" style="width: 14px; display: inline; vertical-align: middle;"></i> Secure Payment | Instant PDF Download
+                </p>
+            </div>
+
+            <div class="book-container fade-in">
+                <div class="book">
+                    <i data-lucide="heart-pulse" size="48" color="white" style="margin-bottom: 20px; opacity: 0.8;"></i>
+                    <div class="book-title">
+                        Fatty Liver<br>Care Guide
+                    </div>
+                    <div class="book-subtitle">Lifestyle & Diet Kit</div>
+                    <div style="margin-top: 30px; color: white; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px; width: 100%;">
+                        <small>Hindi + English</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AWARENESS -->
+    <section class="section-padding problem-section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>
+                    <span class="hindi-text">क्या आप इन समस्याओं से जूझ रहे हैं?</span>
+                    <span class="eng-text">Are you struggling with these issues?</span>
+                </h2>
+                <div style="width: 60px; height: 4px; background: var(--accent); margin: 15px auto;"></div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card fade-in">
+                    <div class="icon-box">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3>
+                        <span class="hindi-text">लगातार थकान</span>
+                        <span class="eng-text">Constant Fatigue</span>
+                    </h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        बिना ज्यादा काम किए भी शरीर में भारीपन और आलस महसूस होना।
+                    </p>
+                </div>
+                <div class="card fade-in">
+                    <div class="icon-box">
+                        <i data-lucide="alert-circle"></i>
+                    </div>
+                    <h3>
+                        <span class="hindi-text">पाचन की दिक्कतें</span>
+                        <span class="eng-text">Digestive Issues</span>
+                    </h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        पेट फूलना, गैस बनना और खाने के बाद भारीपन।
+                    </p>
+                </div>
+                <div class="card fade-in">
+                    <div class="icon-box">
+                        <i data-lucide="utensils-crossed"></i>
+                    </div>
+                    <h3>
+                        <span class="hindi-text">गलत खान-पान</span>
+                        <span class="eng-text">Unhealthy Diet</span>
+                    </h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        तला-भुना खाना और एक्सरसाइज की कमी से लिवर पर असर।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="section-padding solution-section">
+        <div class="container solution-grid">
+            <div class="fade-in">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" alt="Healthy Food Ingredients" style="border-radius: 20px; box-shadow: var(--shadow);">
+            </div>
+            <div class="fade-in">
+                <span class="highlight-orange" style="font-weight: 700; letter-spacing: 1px;">OUR SOLUTION</span>
+                <h2 style="margin: 15px 0 30px;">
+                    <span class="hindi-text">यह गाइड आपकी मदद कैसे करेगी?</span>
+                    <span class="eng-text">How will this guide help you?</span>
+                </h2>
+
+                <ul class="check-list">
+                    <li>
+                        <i data-lucide="check-circle-2" class="check-icon"></i>
+                        <div>
+                            <span class="hindi-text">घर के खान-पान में छोटे बदलाव</span>
+                            <span class="eng-text">Small changes in home cooked meals for better health.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" class="check-icon"></i>
+                        <div>
+                            <span class="hindi-text">रोजाना डिटॉक्स ड्रिंक्स की जानकारी</span>
+                            <span class="eng-text">Knowledge of daily natural detox drinks.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" class="check-icon"></i>
+                        <div>
+                            <span class="hindi-text">लिवर फ्रेंडली एक्सरसाइज रूटीन</span>
+                            <span class="eng-text">Simple liver-friendly exercise routine.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" class="check-icon"></i>
+                        <div>
+                            <span class="hindi-text">किन चीजों से परहेज करें (Do's & Don'ts)</span>
+                            <span class="eng-text">Complete list of foods to avoid and prefer.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MID PAGE CTA -->
+    <section class="mid-cta fade-in">
+        <div class="container">
+            <h2>
+                <span class="hindi-text">अपनी सेहत को आज ही प्राथमिकता दें</span>
+                <span class="eng-text" style="color: #eee;">Prioritize Your Health Today</span>
+            </h2>
+            <p>Get the Complete PDF Guide + Diet Chart + Home Remedies</p>
+            <a href="#buy-section" class="btn btn-primary pulse-anim" style="background: white; color: var(--accent);">
+                Yes! I Want This Guide @ ₹99
+            </a>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET / USP -->
+    <section class="section-padding usp-section">
+        <div class="container">
+            <div class="text-center fade-in" style="margin-bottom: 40px;">
+                <h2>
+                    <span class="hindi-text">यह गाइड बाकियों से अलग क्यों है?</span>
+                    <span class="eng-text">Why is this guide different?</span>
+                </h2>
+            </div>
+            
+            <div class="grid-3">
+                <div class="usp-card fade-in">
+                    <h4>🌟 100% Indian Context</h4>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Based on Indian kitchens and ingredients. No fancy imported salads.</p>
+                </div>
+                <div class="usp-card fade-in">
+                    <h4>🗣️ Bilingual (Hindi + Eng)</h4>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Easy to understand language suitable for elders and youth alike.</p>
+                </div>
+                <div class="usp-card fade-in">
+                    <h4>💰 Pocket Friendly</h4>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">High quality health advice for less than the price of a burger.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="section-padding" id="buy-section" style="background: white;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <div class="fade-in" style="background: var(--secondary); padding: 40px; border-radius: 20px; border: 2px solid var(--primary);">
+                <span style="background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Limited Time Offer</span>
+                
+                <h2 style="margin: 20px 0;">
+                    <span class="hindi-text">Download Fatty Liver Care Kit</span>
+                </h2>
+                <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 10px;">
+                    ₹99 <span style="font-size: 1.2rem; color: #999; text-decoration: line-through;">₹499</span>
+                </div>
+                
+                <p style="margin-bottom: 30px;">
+                    Instant PDF Access via Email immediately after payment.
+                </p>
+                
+                <!-- Mock Buy Button - In real scenario, link to Payment Gateway -->
+                <button class="btn btn-primary pulse-anim" style="width: 100%; max-width: 400px;" onclick="alert('Redirecting to Payment Gateway...')">
+                    Unlock Your Health Guide Now
+                </button>
+            </div>
+
+            <!-- TRUST & DISCLAIMER -->
+            <div class="disclaimer-box fade-in">
+                <div class="disclaimer-title">
+                    <i data-lucide="info"></i> Disclaimer (अस्वीकरण):
+                </div>
+                <p>
+                    <span class="hindi-text" style="font-weight: 400;">यह गाइड केवल शैक्षिक उद्देश्यों और जीवनशैली में सुधार के लिए है। यह कोई चिकित्सा उपचार (Medical Treatment) नहीं है।</span>
+                    <span class="eng-text">This guide is for educational purposes and lifestyle support only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with your doctor regarding any medical condition. Results may vary from person to person.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Natural Health Guides. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR ANIMATIONS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
